@@ -23,9 +23,7 @@ def print_codes(target_ul: List[Tag]) -> None:
     :param target_ul:
     """
 
-    number_of_codes = 0
-    for li_tag in target_ul[0].find_all('li'):
-        number_of_codes += 1
+    number_of_codes = len(target_ul[0].find_all('li'))
     print(f'There are {number_of_codes} new codes avaliable:\n')
     for li_tag in target_ul[0].find_all('li'):
         msg_array = str(li_tag.text).split('–')
