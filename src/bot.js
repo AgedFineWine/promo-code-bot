@@ -11,7 +11,8 @@ const client = new Client({
     ],
 });
 
-client.commands = new Collection();
+client.commands = new Collection(); // key: command Name -> value: entire command object
+client.cooldowns = new Collection(); // key: command Name -> value: new Collection -> key: userID -> value: current time
 
 const commandsFolderPath = path.join(__dirname, 'commands');
 const commandsFolder = fs.readdirSync(commandsFolderPath);
@@ -23,7 +24,7 @@ for (const file of commandsFolder) {
     if ('data' in commandFile && 'execute' in commandFile) {
         client.commands.set(commandFile.data.name, commandFile);
     } else {
-        console.log(`[ERROR ❌] ${commandsFilePath} is missing either or both of the "data" and "execute" attribute.`);
+        console.log(`[ERROR❌] ${commandsFilePath} is missing either or both of the "data" and "execute" attribute.`);
     }
 }
 

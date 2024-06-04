@@ -8,6 +8,7 @@ module.exports = {
     data: new SlashCommandBuilder()
     .setName('genshincodes')
     .setDescription('Replies with the latest Genshin Impact codes'),
+    cooldownDuration: 60,
 
     async execute(interaction) {
         const msg = await runPythonScript(pythonScriptPath);
