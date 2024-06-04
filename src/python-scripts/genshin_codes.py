@@ -25,7 +25,7 @@ def print_codes(li_tags: List[Tag]) -> None:
     :param li_tags: List of 'li' Tag objects
     """
     number_of_codes = len(li_tags)
-    print(f'There are {number_of_codes} new Genshin Impact codes avaliable:\n')
+    print(f'There are {number_of_codes} new Genshin Impact codes available:\n')
     for li_tag in li_tags:
         msg_array = str(li_tag.text).split('–')
         print(f"{li_tag.find('strong').text.strip()} - {msg_array[1].replace("’", "'").strip()}")

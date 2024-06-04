@@ -24,7 +24,7 @@ def print_codes(target_ul: List[Tag]) -> None:
     """
 
     number_of_codes = len(target_ul[0].find_all('li'))
-    print(f'There are {number_of_codes} new codes avaliable:\n')
+    print(f'There are {number_of_codes} new codes available:\n')
     for li_tag in target_ul[0].find_all('li'):
         msg_array = str(li_tag.text).split('–')
         print(f"{li_tag.find('strong').text.strip()} - {msg_array[1].replace("’", "'").strip()}")
