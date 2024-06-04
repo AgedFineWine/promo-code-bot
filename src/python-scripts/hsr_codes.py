@@ -4,12 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-
 def find_ul_tags(soup: BeautifulSoup) -> List[Tag]:
     """
-    Finds and returns all 'ul' tags inside the first 'div' with class 'entry-content'.
+    Finds and returns all 'ul' tags inside the first 'div' with class 'entry-content'
 
-    :param soup: BeautifulSoup object representing the parsed HTML.
+    :param soup: BeautifulSoup object representing the parsed HTML
     :return: List of 'ul' Tag objects
     """
 
@@ -19,7 +18,7 @@ def find_ul_tags(soup: BeautifulSoup) -> List[Tag]:
 
 def print_codes(target_ul: List[Tag]) -> None:
     """
-    Finds and prints all the 'li' tags within the first target_ul tag list object.
+    Finds and prints all the 'li' tags within the first target_ul tag list object
 
     :param target_ul:
     """
@@ -29,7 +28,8 @@ def print_codes(target_ul: List[Tag]) -> None:
         number_of_codes += 1
     print(f'There are {number_of_codes} new codes avaliable:\n')
     for li_tag in target_ul[0].find_all('li'):
-        print(li_tag.text.replace("–", "-"))
+        msg_array = str(li_tag.text).split('–')
+        print(f"{li_tag.find('strong').text.strip()} - {msg_array[1].replace("’", "'").strip()}")
     print('\nRedeem the codes here: https://hsr.hoyoverse.com/gift')
 
 def main():
