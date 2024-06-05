@@ -11,8 +11,8 @@ const client = new Client({
     ],
 });
 
-client.commands = new Collection(); // key: command Name -> value: entire command object
 client.cooldowns = new Collection(); // key: command Name -> value: new Collection -> key: userID -> value: current time
+client.commands = new Collection(); // key: command Name -> value: entire command object
 
 const commandsFolderPath = path.join(__dirname, 'commands');
 const commandsFolder = fs.readdirSync(commandsFolderPath);

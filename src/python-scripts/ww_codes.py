@@ -27,7 +27,7 @@ def print_codes(tr_tags: List[Tag]) -> None:
         text_array = tr_tag.text.split(' ')
         print(f"{text_array[0]} - {', '.join(text_array[1:])}")
     print('\nTo redeem these codes log into your account and \
-     go to "Other settings" from your account settings.')
+go to "Other settings" from your account settings.')
 
 def main() -> None:
     """
