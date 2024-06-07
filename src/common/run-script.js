@@ -10,7 +10,6 @@ module.exports = async function(scriptPath) {
             return 'Some error occured.';
         }
         return stdout;
-        
     } catch (error) {
         console.log(error);
         return 'Some error occured. Promise unfulfilled';

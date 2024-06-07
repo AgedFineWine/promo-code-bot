@@ -35,7 +35,6 @@ module.exports = {
                     });
                 }
             }
-            
             timestamp.set(userId, currentTime);
             setTimeout(() => {
                 return timestamp.delete(userId);
@@ -45,7 +44,11 @@ module.exports = {
         try {
             await command.execute(interaction);
         } catch (error) {
-            console.log(error);
+            console.log(`[ERROR❌]\n${error}`);
+            interaction.reply({
+                content: "Something went wrong, try again later.",
+                ephemeral: true,
+            });
         }
     }
 };
