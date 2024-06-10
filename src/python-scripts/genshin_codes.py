@@ -35,7 +35,7 @@ def find_codes_and_rewards(soup: BeautifulSoup) -> dict[str, list[str]]:
         item_list = td_tag.parent.find_all('span', class_='item')
         rewards_list = []
         for item in item_list:
-            rewards_list.append(item.text.strip())
+            rewards_list.append(item.text.strip().replace('\u00d7', 'x'))
         cumulative_rewards_list.append(rewards_list)
     return dict(zip(cumulative_codes_list, cumulative_rewards_list))
 
