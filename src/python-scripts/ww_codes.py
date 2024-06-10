@@ -37,7 +37,7 @@ def print_out(cumulative_dict: dict) -> None:
          are promo codes (str) and values are lists of rewards (list[str]).
     """
 
-    print(f'There are {len(cumulative_dict)} new codes available to redeem:\n')
+    print(f'There are {len(cumulative_dict)} codes available to redeem:\n')
     for codes, rewards in cumulative_dict.items():
         print(f'{codes} - {', '.join(rewards)}')
     print('\nTo redeem these codes log into your account and \
