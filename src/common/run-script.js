@@ -4,7 +4,7 @@ const exec = util.promisify(require('child_process').exec);
 module.exports = async function(scriptPath) {
     try {
         const { stdout, stderr } = await exec(`python3 ${scriptPath}`);
-        
+
         if (stderr) {
             console.log(stderr);
             return 'Some error occured.';

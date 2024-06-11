@@ -39,7 +39,7 @@ def print_out(cumulative_dict: dict) -> None:
 
     print(f'There are {len(cumulative_dict)} codes available to redeem:\n')
     for codes, rewards in cumulative_dict.items():
-        print(f'{codes} - {', '.join(rewards)}')
+        print(f'{codes} - {", ".join(rewards)}')
     print('\nTo redeem these codes log into your account and \
 go to "Other settings" from your account settings.')
 
