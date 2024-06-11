@@ -1,1 +1,1 @@
-# gift-bot-discord
+# PromoScout Discord bot
